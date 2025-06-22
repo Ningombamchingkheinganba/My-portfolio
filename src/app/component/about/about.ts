@@ -34,7 +34,7 @@ export class About implements OnInit {
     { name: 'Angular', percentage: 90, color: 'from-red-500 to-pink-500' },
     { name: 'Node.js', percentage: 85, color: 'from-green-500 to-emerald-500' },
     { name: 'Three.js', percentage: 80, color: 'from-blue-500 to-cyan-500' },
-    { name: 'MySQL', percentage: 85, color: 'from-orange-500 to-yellow-500' },
+    { name: 'Sequelize', percentage: 85, color: 'from-orange-500 to-yellow-500' },
     { name: 'TypeScript', percentage: 88, color: 'from-purple-500 to-indigo-500' },
     { name: 'Express.js', percentage: 82, color: 'from-gray-600 to-gray-800' }
   ];
