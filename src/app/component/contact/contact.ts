@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './contact.html',
   styleUrl: './contact.scss'
 })
@@ -13,8 +14,21 @@ export class Contact {
   animate = false;
   
   ngOnInit(): void {
-    setTimeout (() => {
-      this.animate = true;
-    }, 200)
+    this.setUpScrollAnimation();
+  }
+
+  private setUpScrollAnimation(): void {
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          this.animate = true;
+        }
+      })
+    }, {threshold: 0.3});
+
+    const contactSection = document.getElementById("contact");
+    if(contactSection) {
+      observer.observe(contactSection);
+    }
   }
 }

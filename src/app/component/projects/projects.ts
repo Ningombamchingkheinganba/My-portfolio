@@ -25,9 +25,24 @@ export class Projects {
   animate = false;
   
   ngOnInit(): void {
-    setTimeout (() => {
-      this.animate = true;
-    }, 200)
+    // Use Intersection Observer for scroll animations
+    this.setupScrollAnimation();
+  }
+
+  private setupScrollAnimation(): void {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.animate = true;
+          // this.animateSkillBars();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const projectSection = document.getElementById('projects');
+    if (projectSection) {
+      observer.observe(projectSection);
+    }
   }
 
 }
