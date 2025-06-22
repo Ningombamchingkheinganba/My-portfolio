@@ -1,0 +1,174 @@
+<!-- <section
+  id="contact"
+  class="py-12 bg-white px-6 opacity-0 translate-y-12 transition-all duration-1000"
+  appAnimateOnScroll
+  [class.opacity-100]="animate"
+  [class.translate-y-0]="animate"
+>
+  <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+  <form class="max-w-xl mx-auto space-y-4">
+    <input
+      type="text"
+      placeholder="Name"
+      class="w-full border px-4 py-2 rounded"
+    />
+    <input
+      type="email"
+      placeholder="Email"
+      class="w-full border px-4 py-2 rounded"
+    />
+    <textarea
+      placeholder="Message"
+      class="w-full border px-4 py-2 rounded"
+    ></textarea>
+    <button class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
+      Send
+    </button>
+  </form>
+</section> -->
+
+<section id="contact" class="section-padding bg-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold text-gray-900 mb-4">
+          Get In <span class="text-gradient">Touch</span>
+        </h2>
+        <div
+          class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6"
+        ></div>
+        <p class="text-xl text-gray-600">
+          Let's discuss your next project or opportunity
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+            Let's Connect
+          </h3>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            I'm always interested in new opportunities and exciting projects.
+            Whether you have a question or just want to say hi, feel free to
+            reach out!
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4"
+              >
+                <svg
+                  class="w-6 h-6 text-purple-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">Email</div>
+                <div class="text-gray-600">{{mail}}</div>
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4"
+              >
+                <svg
+                  class="w-6 h-6 text-purple-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">Location</div>
+                <div class="text-gray-600">Bengaluru, Karnataka, IN</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <form class="space-y-6" onsubmit="handleSubmit(event)">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                required
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                placeholder="Your full name"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                required
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Subject</label
+              >
+              <input
+                type="text"
+                required
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                placeholder="What's this about?"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Message</label
+              >
+              <textarea
+                required
+                rows="4"
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none"
+                placeholder="Tell me about your project..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

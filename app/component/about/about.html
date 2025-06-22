@@ -1,0 +1,150 @@
+<!-- <section id="about"
+  class="min-h-screen bg-white p-10 md:px-32 opacity-0 translate-y-12 transition-all duration-1000"
+  appAnimateOnScroll
+  [class.opacity-100]="animate"
+  [class.translate-y-0]="animate"
+>
+  <h2 class="text-4xl font-bold text-gray-800 mb-6">About Me</h2>
+  <p class="text-lg text-gray-600 leading-relaxed">
+    I'm a passionate <strong>MEAN stack developer</strong> with 1.8 years of
+    experience in building scalable, high-performance applications. I'm
+    proficient with Angular, Node.js, MySQL, Sequelize, and Three.js. I worked
+    at <strong>Udm Global Solution Pvt Ltd</strong> where I developed:
+  </p>
+
+  <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
+    <li>Employee Management System (Angular + MySQL)</li>
+    <li>3D E-commerce Platform (Three.js + Sequelize)</li>
+    <li>Interactive UI/UX with reusable components</li>
+  </ul>
+</section> -->
+
+<section
+  id="about"
+  class="section-padding bg-gray-50 opacity-0 translate-y-12 transition-all duration-1000"
+  [ngClass]="{'opacity-100 translate-y-0': animate}"
+>
+  <div class="container mx-auto px-6">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          About <span class="text-gradient">Me</span>
+        </h2>
+        <div
+          class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto"
+        ></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Column - About Text & Stats -->
+        <div class="space-y-8">
+          <div class="space-y-6">
+            <p class="text-lg text-gray-700 leading-relaxed">
+              I'm a passionate
+              <strong class="text-purple-600">MEAN stack developer</strong> with
+              1.8 years of experience in building scalable, high-performance
+              applications. I specialize in creating interactive and engaging
+              user experiences using modern web technologies.
+            </p>
+
+            <p class="text-lg text-gray-700 leading-relaxed">
+              During my time at
+              <strong class="text-purple-600"
+                >Udm Global Solution Pvt Ltd</strong
+              >, I've developed comprehensive solutions that combine robust
+              backend architecture with stunning frontend interfaces.
+            </p>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-4">
+            <div
+              *ngFor="let stat of stats; let i = index"
+              class="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105"
+              [style.animation-delay]="(i * 0.1) + 's'"
+            >
+              <div class="text-3xl font-bold text-purple-600 mb-2">
+                {{ stat.value }}
+              </div>
+              <div class="text-gray-600 font-medium">{{ stat.label }}</div>
+            </div>
+          </div>
+
+          <!-- Call to Action -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/my-Resume/public/chingkhei_resume_final.pdf"
+              download
+              class="px-6 py-3 bg-gradient-to-r cursor-pointer from-purple-500 to-blue-500 text-white rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all"
+            >
+              Download Resume
+            </a>
+            <a
+              href="/portfolio"
+              class="px-6 py-3 border-2 cursor-pointer border-purple-500 text-purple-500 rounded-lg font-semibold hover:bg-purple-500 hover:text-white transition-all"
+            >
+              View Portfolio
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column - Skills -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+              Technical Skills
+            </h3>
+
+            <div class="space-y-6">
+              <div
+                *ngFor="let skill of skills; let i = index"
+                class="skill-item"
+                [style.animation-delay]="(i * 0.1) + 's'"
+              >
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-semibold text-gray-700"
+                    >{{ skill.name }}</span
+                  >
+                  <span class="text-purple-600 font-semibold"
+                    >{{ skill.percentage }}%</span
+                  >
+                </div>
+
+                <div
+                  class="w-full bg-gray-200 rounded-full h-3 overflow-hidden"
+                >
+                  <div
+                    [id]="'skill-' + i"
+                    class="h-full rounded-full transition-all duration-1000 ease-out"
+                    [ngClass]="'bg-gradient-to-r ' + skill.color"
+                    style="width: 0%"
+                  >
+                    <div
+                      class="h-full bg-white bg-opacity-30 rounded-full shimmer"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technologies -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Technologies I Work With
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                *ngFor="let tech of ['Angular', 'Node.js', 'Express', 'MySQL', 'Three.js', 'TypeScript', 'Sequelize', 'Tailwind CSS']"
+                class="px-4 py-2 bg-white text-gray-700 rounded-full shadow-sm border border-gray-200 hover:border-purple-300 hover:text-purple-600 transition-all cursor-default"
+              >
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
