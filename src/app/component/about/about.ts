@@ -45,7 +45,7 @@ export class About implements OnInit {
    experienceYears = (this.diffInMonths / 12).toFixed(1);
 
   stats = [
-    { value: '1.8', label: 'Years Experience' },
+    { value: '2', label: 'Years Experience' },
     { value: '2', label: 'Projects Completed' },
     { value: '5+', label: 'Technologies' },
     { value: '100%', label: 'Client Satisfaction' }
