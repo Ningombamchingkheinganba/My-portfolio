@@ -57,7 +57,10 @@ export class Contact {
       this.publicKey
     ).then(
       (response: EmailJSResponseStatus) => {
-        alert('✅ Message sent successfully!');
+        if(response) {
+          this.emailForm.reset();
+          alert('✅ Message sent successfully!');
+        }
       },
       (error) => {
         alert('❌ Failed to send message.');
