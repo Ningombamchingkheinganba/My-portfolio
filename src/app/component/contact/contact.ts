@@ -58,8 +58,8 @@ export class Contact {
     ).then(
       (response: EmailJSResponseStatus) => {
         if(response) {
-          this.emailForm.reset();
           alert('✅ Message sent successfully!');
+          this.emailForm.reset();
         }
       },
       (error) => {
